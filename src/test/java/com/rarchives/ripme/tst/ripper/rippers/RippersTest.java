@@ -3,6 +3,7 @@ package com.rarchives.ripme.tst.ripper.rippers;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import com.rarchives.ripme.ripper.rippers.ChanRipper;
 
@@ -98,6 +99,9 @@ public class RippersTest {
 
     /** Recursively deletes a directory */
     void deleteDir(File dir) {
+        if (!Optional.ofNullable(dir).map(File::getName).isPresent()) {
+            return;
+        }
         if (!dir.getName().contains("_")) {
             // All ripped albums contain an underscore
             // Don't delete an album if it doesn't have an underscore

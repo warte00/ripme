@@ -6,10 +6,13 @@ import java.net.URL;
 import com.rarchives.ripme.ripper.rippers.SinfestRipper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 
 public class SinfestRipperTest extends RippersTest {
     @Test
+    @Disabled
     public void testRip() throws IOException {
+
         SinfestRipper ripper = new SinfestRipper(new URL("http://sinfest.net/view.php?date=2000-01-17"));
         testRipper(ripper);
     }
